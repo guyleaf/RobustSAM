@@ -69,6 +69,10 @@ bash download.sh
 ```
 3) There are only clear images downloaded in the previous step. Use command below to generate corresponding degraded images. 
 ```
+conda create --name robustsam_data python=3.8 -y
+conda activate robustsam_data
+pip install -r requirements.txt
+
 bash gen_data.sh
 ```
 
@@ -151,4 +155,3 @@ If you find this work useful, please consider citing us!
 
 ## Acknowledgements
 We thank the authors of [SAM](https://github.com/facebookresearch/segment-anything) from which our repo is based off of.
-

@@ -1,21 +1,18 @@
-import cv2
-from glob import glob
-import os
-import numpy as np
-from PIL import Image, ImageDraw
-import matplotlib.pyplot as plt
-import torchvision.transforms as T
-import albumentations as A
-import imgaug.augmenters as iaa
-import random
-import torchvision.transforms.functional as TF
-import torchvision.transforms as transforms
 import argparse
+import os
+import random
+from glob import glob
+
+import albumentations as A
+import cv2
+import imgaug.augmenters as iaa
+import numpy as np
 from tqdm import tqdm
+
 
 def transform(case, path):        
     ori_image = cv2.imread(path)
-    clear_image = cv2.cvtColor(ori_image, cv2.COLOR_BGR2RGB)
+    # clear_image = cv2.cvtColor(ori_image, cv2.COLOR_BGR2RGB)
     image = cv2.cvtColor(ori_image, cv2.COLOR_BGR2RGB)
     
     degraded_dict = {'snow': snow, 'fog': fog, 'rain': rain,
@@ -223,8 +220,8 @@ if opt.case is None:
                     'frosted_glass_blur', 'brightness', 'contrast' ]
 
 else: 
-    degraded_list = [case]
-    print('Processing {} only!'.format(case))
+    degraded_list = [opt.case]
+    print('Processing {} only!'.format(opt.case))
 
 
 for j, degraded_type in enumerate(degraded_list):

@@ -1,3 +1,6 @@
+eval "$(conda shell.bash hook)"
+conda activate robustsam_data
+
 echo " "
 echo " ##############################################################################################"
 echo "=> Start generating degraded images of train dataset <=="
